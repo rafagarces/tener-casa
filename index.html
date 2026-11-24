@@ -36,18 +36,18 @@ body{
 
 /* ——— portada ——— */
 .cover{
-  min-height:100svh;
+  height:100svh;min-height:520px;
   display:flex;flex-direction:column;
   padding:clamp(20px,5vw,56px);
   position:relative;
 }
-.cover-lines{display:flex;flex-direction:column;align-items:flex-start;gap:.34em;margin-top:.4em}
+.cover-lines{display:flex;flex-direction:column;align-items:flex-start;gap:.26em;margin-top:0}
 .cover-line{display:inline-block}
 .cover-line .w{
   display:inline-block;
   font-weight:800;font-style:italic;text-transform:uppercase;
   letter-spacing:-.01em;
-  font-size:clamp(30px,8.6vw,88px);
+  font-size:clamp(26px,min(8.6vw,5.3svh),88px);
   line-height:1;
 }
 .cover-line .adoquin{width:calc(100% + 1.1em);margin-top:.06em}
@@ -56,9 +56,9 @@ body{
   writing-mode:vertical-rl;transform:rotate(180deg);
   font-size:15px;font-weight:500;letter-spacing:.06em;
 }
-.cover-pub{
-  margin-top:auto;align-self:flex-end;text-align:left;line-height:1.02;
-}
+.cover-foot{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.cover-pub{text-align:left;line-height:1.02}
+.cover-foot a.boton{font-size:clamp(15px,2.2vw,19px);padding:.7em 1.1em .8em}
 .cover-pub b{display:block;font-weight:800;font-size:clamp(16px,2.2vw,21px);letter-spacing:-.01em}
 .cover-pub span{font-style:italic;font-size:clamp(13px,1.7vw,16px)}
 
@@ -113,11 +113,55 @@ footer p{max-width:44rem;opacity:.9}
 @media (max-width:480px){
   .cover-author{font-size:13px;right:12px}
 }
+
+/* ——— v2: maquetación editorial ——— */
+body{font-size:18px;line-height:1.6}
+.nota,figcaption{opacity:1}
+.lead{font-size:clamp(21px,2.6vw,28px);line-height:1.28;font-weight:800;font-style:italic;letter-spacing:-.01em;margin-bottom:.8rem}
+.lead-meta{font-size:15px;font-weight:500}
+section p{max-width:38em}
+.layout{max-width:70rem;margin:0 auto}
+.col-text section:first-child{margin-top:clamp(40px,6vw,72px)}
+.aside{margin:clamp(40px,7vw,72px) auto 0;max-width:44rem}
+.aside img.portada{width:min(100%,340px);margin:0 0 1.4rem;box-shadow:10px 10px 0 var(--ink)}
+.aside figure{margin-bottom:1.6rem}
+.aside figcaption{text-align:left}
+.card{border:2px solid var(--ink);padding:1.2rem 1.3rem 1.4rem}
+.card h2{font-size:clamp(22px,3vw,30px)}
+.card dl{margin-bottom:1.4rem;font-size:15.5px}
+.card .precio{font-weight:800;font-style:italic;font-size:30px;line-height:1.1;margin:0 0 .15em}
+.card .precio small{display:block;font-weight:500;font-style:normal;font-size:14px;margin-top:.3em}
+.card .stock{font-size:15px;margin-bottom:1.1rem}
+.card a.boton{display:block;text-align:center}
+@media (min-width:900px){
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 22.5rem;gap:clamp(40px,6vw,88px);align-items:start}
+  .col-text section{margin-left:0;margin-right:0}
+  .aside{position:sticky;top:28px;margin-top:clamp(40px,6vw,72px)}
+}
+/* barra de compra fija en móvil, aparece al salir de la portada */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--ink);color:var(--teja);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .25s ease}
+.barra.on{transform:none}
+.barra span{font-weight:800;font-style:italic;text-transform:uppercase;font-size:15px}
+.barra a{background:var(--teja);color:var(--ink);font-weight:800;font-style:italic;text-transform:uppercase;text-decoration:none;padding:.55em 1em;font-size:15px}
+@media (min-width:900px){.barra{display:none}}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+a.boton:focus-visible{outline-color:var(--teja);outline-offset:-6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra{transition:none}}
+
+.cover-img{display:none}
+@media (min-width:900px){
+  .cover-img{display:block;position:absolute;right:clamp(90px,11vw,170px);top:clamp(28px,5vw,56px);height:calc(100svh - 2*clamp(28px,5vw,56px) - 110px);min-height:300px;width:auto;aspect-ratio:auto;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--ink)}
+  .aside figure{display:none}
+}
+.card .precio{text-transform:none}.card .precio small{text-transform:none;font-style:normal}.card a.boton{font-size:17px;white-space:nowrap;padding:.8em .6em .9em}
 </style>
 </head>
 <body>
 
 <header class="cover" aria-label="Portada">
+  <img class="cover-img" src="portada.jpg" alt="" aria-hidden="true">
   <span class="cover-author">Juan Manuel Rodilla</span>
   <div class="cover-lines" role="heading" aria-level="1" aria-label="¿Por qué cada vez es más difícil tener casa?">
     <span class="cover-line"><span class="w">¿Por</span><i class="adoquin"></i></span>
@@ -130,12 +174,18 @@ footer p{max-width:44rem;opacity:.9}
     <span class="cover-line"><span class="w">tener</span><i class="adoquin"></i></span>
     <span class="cover-line"><span class="w">casa?</span><i class="adoquin"></i></span>
   </div>
-  <div class="cover-pub"><b>tirant<br>humanidades</b><span>plural</span></div>
+  <div class="cover-foot">
+    <a class="boton" href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923">Comprar · 17,00 €</a>
+    <div class="cover-pub"><b>tirant<br>humanidades</b><span>plural</span></div>
+  </div>
 </header>
 
 <main>
+  <div class="layout">
+  <div class="col-text">
   <section>
-    <p><strong>Un ensayo de Juan Manuel Rodilla sobre por qué el acceso a la vivienda en España se ha convertido en una yincana.</strong> Publicado por Tirant Humanidades, colección Plural, el 30 de octubre de 2026.</p>
+    <p class="lead">Un ensayo de Juan Manuel Rodilla sobre por qué el acceso a la vivienda en España se ha convertido en una yincana.</p>
+    <p class="lead-meta">Tirant Humanidades, colección Plural · 30 de octubre de 2026</p>
   </section>
 
   <section>
@@ -159,16 +209,15 @@ footer p{max-width:44rem;opacity:.9}
     <p class="nota">Según la descripción del proyecto en <a href="https://www.altrestudi.com/por-que-cada-vez-es-mas-dificil-tener-casa-cas">altrestudi.com</a>.</p>
   </section>
 
-  <section>
+</div>
+  <aside class="aside" aria-label="Ficha y compra">
     <figure>
       <img class="portada" src="portada.jpg" alt="Portada del libro: fondo teja con el título en letra negra, grande e itálica, una palabra por línea sobre subrayados segmentados">
       <figcaption>Portada de la edición en papel.</figcaption>
     </figure>
-  </section>
-
-  <section>
-    <h2>Ficha</h2><i class="adoquin"></i>
-    <dl>
+    <div class="card comprar">
+      <h2>Ficha</h2><i class="adoquin" style="width:5em;margin-bottom:1rem"></i>
+      <dl>
       <dt>Autor</dt><dd>Juan Manuel Rodilla</dd>
       <dt>Editorial</dt><dd>Tirant Humanidades (Tirant lo Blanch)</dd>
       <dt>Colección</dt><dd>Plural</dd>
@@ -177,14 +226,12 @@ footer p{max-width:44rem;opacity:.9}
       <dt>ISBN papel</dt><dd>9791370383923</dd>
       <dt>ISBN ebook</dt><dd>9791370383930</dd>
     </dl>
-  </section>
-
-  <section class="comprar">
-    <h2>Comprar</h2><i class="adoquin"></i>
-    <p class="precio">17,00 € <span style="font-weight:500;font-style:normal;text-transform:none;font-size:.55em">(PVP 17,90 €, −5 % en la web de la editorial)</span></p>
-    <p>En stock, con entrega en 24-48 h. También en ebook por 11,00 €.</p>
-    <p><a class="boton" href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923">Comprar en la editorial</a></p>
-  </section>
+      <p class="precio">17,00 €<small>PVP 17,90 €, −5 % en la web de la editorial</small></p>
+      <p class="stock">En stock, con entrega en 24-48 h. También en ebook por 11,00 €.</p>
+      <a class="boton" href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923">Comprar en la editorial</a>
+    </div>
+  </aside>
+  </div>
 </main>
 
 <footer>
@@ -192,5 +239,11 @@ footer p{max-width:44rem;opacity:.9}
   <p>Web de presentación del libro. Ficha, sinopsis y precios comprobados el 24 de noviembre de 2026 en <a href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923">editorial.tirant.com</a>. El botón de compra abre la tienda de la editorial; nada se compra desde esta página.</p>
 </footer>
 
+<div class="barra" id="barra" aria-hidden="true"><span>17,00 €</span><a href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923" tabindex="-1">Comprar en la editorial</a></div>
+<script>
+(function(){var c=document.querySelector('.cover'),b=document.getElementById('barra');
+if(!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){var on=!e[0].isIntersecting;b.classList.toggle('on',on);b.setAttribute('aria-hidden',on?'false':'true');b.querySelector('a').tabIndex=on?0:-1},{threshold:0}).observe(c);})();
+</script>
 </body>
 </html>
