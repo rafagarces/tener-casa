@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Por qué cada vez es más difícil tener casa? — Juan Manuel Rodilla</title>
+<meta name="description" content="Un ensayo de Juan Manuel Rodilla sobre por qué el acceso a la vivienda en España se ha convertido en una yincana. Tirant Humanidades, colección Plural, 2026.">
+<meta property="og:type" content="book">
+<meta property="og:title" content="¿Por qué cada vez es más difícil tener casa?">
+<meta property="og:description" content="El ensayo de Juan Manuel Rodilla sobre el acceso a la vivienda en España. Tirant Humanidades, colección Plural.">
+<meta property="og:image" content="portada.jpg">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23b37256'/%3E%3Cpath d='M20 78h12M40 78h12M60 78h20' stroke='%231c1310' stroke-width='8'/%3E%3C/svg%3E">
+<style>
+:root{
+  --teja:#b37256;
+  --ink:#1c1310;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--teja);
+  color:var(--ink);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ink);color:var(--teja)}
+
+/* ——— motivo adoquinado: regla segmentada ——— */
+.adoquin{
+  display:block;height:.14em;border:0;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 .72em,transparent .72em 1.05em);
+}
+
+/* ——— portada ——— */
+.cover{
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  padding:clamp(20px,5vw,56px);
+  position:relative;
+}
+.cover-lines{display:flex;flex-direction:column;align-items:flex-start;gap:.34em;margin-top:.4em}
+.cover-line{display:inline-block}
+.cover-line .w{
+  display:inline-block;
+  font-weight:800;font-style:italic;text-transform:uppercase;
+  letter-spacing:-.01em;
+  font-size:clamp(30px,8.6vw,88px);
+  line-height:1;
+}
+.cover-line .adoquin{width:calc(100% + 1.1em);margin-top:.06em}
+.cover-author{
+  position:absolute;top:clamp(22px,5vw,58px);right:clamp(14px,3.4vw,44px);
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:15px;font-weight:500;letter-spacing:.06em;
+}
+.cover-pub{
+  margin-top:auto;align-self:flex-end;text-align:left;line-height:1.02;
+}
+.cover-pub b{display:block;font-weight:800;font-size:clamp(16px,2.2vw,21px);letter-spacing:-.01em}
+.cover-pub span{font-style:italic;font-size:clamp(13px,1.7vw,16px)}
+
+/* ——— contenido ——— */
+main{padding:0 clamp(20px,5vw,56px) clamp(48px,8vw,96px)}
+section{max-width:44rem;margin:clamp(40px,7vw,84px) auto 0}
+h2{
+  font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:-.01em;
+  font-size:clamp(24px,4.6vw,40px);line-height:1.05;margin-bottom:.2em;
+}
+h2 + .adoquin{width:7.5em;margin-bottom:1.4rem}
+p{margin:0 0 1rem}
+.nota{font-size:14px;opacity:.85}
+a{color:inherit}
+img.portada{
+  display:block;width:min(100%,420px);height:auto;
+  border:2px solid var(--ink);
+  margin:0 auto;
+}
+figure{margin:0}
+figcaption{font-size:14px;text-align:center;margin-top:.6rem;opacity:.85}
+
+/* ——— ficha ——— */
+dl{display:grid;grid-template-columns:auto 1fr;gap:.35em 1.2em;font-size:15.5px}
+dt{font-weight:700}
+dd{margin:0}
+
+/* ——— compra ——— */
+.comprar p.precio{font-weight:800;font-style:italic;font-size:clamp(22px,4vw,32px);text-transform:uppercase;margin-bottom:.4em}
+a.boton{
+  display:inline-block;
+  background:var(--ink);color:var(--teja);
+  font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.01em;
+  font-size:clamp(17px,2.6vw,22px);
+  text-decoration:none;
+  padding:.85em 1.3em .95em;
+  position:relative;
+}
+a.boton::after{
+  content:"";display:block;height:.16em;margin-top:.14em;
+  background:repeating-linear-gradient(90deg,var(--teja) 0 .72em,transparent .72em 1.05em);
+}
+a.boton:hover,a.boton:focus-visible{background:#000}
+
+footer{
+  padding:clamp(28px,5vw,48px) clamp(20px,5vw,56px);
+  font-size:13.5px;
+}
+footer .adoquin{width:9em;margin-bottom:1.1rem}
+footer p{max-width:44rem;opacity:.9}
+
+@media (max-width:480px){
+  .cover-author{font-size:13px;right:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="cover" aria-label="Portada">
+  <span class="cover-author">Juan Manuel Rodilla</span>
+  <div class="cover-lines" role="heading" aria-level="1" aria-label="¿Por qué cada vez es más difícil tener casa?">
+    <span class="cover-line"><span class="w">¿Por</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">qué</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">cada</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">vez</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">es</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">más</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">difícil</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">tener</span><i class="adoquin"></i></span>
+    <span class="cover-line"><span class="w">casa?</span><i class="adoquin"></i></span>
+  </div>
+  <div class="cover-pub"><b>tirant<br>humanidades</b><span>plural</span></div>
+</header>
+
+<main>
+  <section>
+    <p><strong>Un ensayo de Juan Manuel Rodilla sobre por qué el acceso a la vivienda en España se ha convertido en una yincana.</strong> Publicado por Tirant Humanidades, colección Plural, el 30 de octubre de 2026.</p>
+  </section>
+
+  <section>
+    <h2>De qué va</h2><i class="adoquin"></i>
+    <p>¿Pagas demasiado por tu alquiler? ¿Conoces a alguien que no puede emanciparse? ¿Ves cada año más lejana la posibilidad de tener una casa que puedas llamar tuya? ¿Sientes que hay cada vez más personas viviendo en la calle? No es casualidad, ni mala suerte, ni fruto de una mala decisión.</p>
+    <p>Juan Manuel Rodilla explica, con rigor y sin tecnicismos, por qué el acceso a la vivienda en España se ha convertido en una auténtica yincana: viviendas vacías en manos de fondos de inversión, alquileres turísticos que reducen la oferta, escasa vivienda social y un relato interesado que lleva décadas imponiendo la construcción de nueva vivienda como única solución.</p>
+    <p>A través de anécdotas personales, datos oficiales y una perspectiva internacional comparada, el autor demuestra que lo que percibimos como un fallo individual tiene raíces profundamente estructurales. Y que existen soluciones, aunque no sean las que nos han estado vendiendo.</p>
+    <p>Un ensayo tan didáctico como incendiario, pensado para quien quiere entender de una vez por qué cada vez es más difícil tener casa, y qué podemos exigir para cambiarlo.</p>
+    <p class="nota">Texto de la ficha del libro en la web de la editorial.</p>
+  </section>
+
+  <section>
+    <h2>El autor</h2><i class="adoquin"></i>
+    <p>Juan Manuel Rodilla.</p>
+    <p>La editorial no publica una biografía del autor; en su catálogo consta únicamente este título. El libro parte de anécdotas personales, datos oficiales y una perspectiva internacional comparada.</p>
+  </section>
+
+  <section>
+    <h2>La cubierta</h2><i class="adoquin"></i>
+    <p>La identidad gráfica, del estudio valenciano ALTRE, parte de dos elementos de la experiencia del sinhogarismo: la caja de cartón y el adoquinado del suelo público. Los subrayados discontinuos obligan a las letras a moverse y separarse por encima de ellos, y la paleta de grises y marrones remite a esos mismos elementos cotidianos.</p>
+    <p class="nota">Según la descripción del proyecto en <a href="https://www.altrestudi.com/por-que-cada-vez-es-mas-dificil-tener-casa-cas">altrestudi.com</a>.</p>
+  </section>
+
+  <section>
+    <figure>
+      <img class="portada" src="portada.jpg" alt="Portada del libro: fondo teja con el título en letra negra, grande e itálica, una palabra por línea sobre subrayados segmentados">
+      <figcaption>Portada de la edición en papel.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Ficha</h2><i class="adoquin"></i>
+    <dl>
+      <dt>Autor</dt><dd>Juan Manuel Rodilla</dd>
+      <dt>Editorial</dt><dd>Tirant Humanidades (Tirant lo Blanch)</dd>
+      <dt>Colección</dt><dd>Plural</dd>
+      <dt>Edición</dt><dd>1.ª, 30 de octubre de 2026</dd>
+      <dt>Formato</dt><dd>Rústica, 202 páginas, castellano</dd>
+      <dt>ISBN papel</dt><dd>9791370383923</dd>
+      <dt>ISBN ebook</dt><dd>9791370383930</dd>
+    </dl>
+  </section>
+
+  <section class="comprar">
+    <h2>Comprar</h2><i class="adoquin"></i>
+    <p class="precio">17,00 € <span style="font-weight:500;font-style:normal;text-transform:none;font-size:.55em">(PVP 17,90 €, −5 % en la web de la editorial)</span></p>
+    <p>En stock, con entrega en 24-48 h. También en ebook por 11,00 €.</p>
+    <p><a class="boton" href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923">Comprar en la editorial</a></p>
+  </section>
+</main>
+
+<footer>
+  <i class="adoquin"></i>
+  <p>Web de presentación del libro. Ficha, sinopsis y precios comprobados el 24 de noviembre de 2026 en <a href="https://editorial.tirant.com/es/libro/por-que-cada-vez-es-mas-dificil-tener-casa-rodilla-juan-manuel-9791370383923">editorial.tirant.com</a>. El botón de compra abre la tienda de la editorial; nada se compra desde esta página.</p>
+</footer>
+
+</body>
+</html>
